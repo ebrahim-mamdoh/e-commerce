@@ -1,0 +1,65 @@
+.notFoundContainer { /* Updated class name */
+    text-align: center;
+    background-color: #f4f7fc;
+    font-family: 'Lato', sans-serif;
+    height: 100vh;
+  }
+  
+  .error {
+    font-size: 150px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #444;
+  }
+  
+  .error span {
+    display: inline-block;
+  }
+  
+  .circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #3498db;
+    position: relative;
+    animation: bounce 1.2s infinite;
+  }
+  
+  .message {
+    font-size: 36px;
+    margin: 20px 0;
+    color: #333;
+  }
+  
+  .description {
+    font-size: 18px;
+    color: #777;
+  }
+  
+  .homeLink { /* Ensure this matches the JSX */
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .homeLink:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Bounce Animation */
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  

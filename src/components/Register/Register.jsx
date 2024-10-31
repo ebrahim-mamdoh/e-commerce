@@ -1,24 +1,27 @@
 import React from "react";
 import { useFormik } from "formik";
 import style from './Register.module.css';  // Import the CSS file
+import * as Yup from 'yup'
 
-function Register  () {
-  
-  function registerSubmit(values){
-    console.log(values);
-    
+
+
+function Register() {
+
+  function registerSubmit(values) {
+    console.log(formik);
+
   }
 
   // Initialize formik
   const formik = useFormik({
     initialValues: {
-      name:'',
+      name: '',
       email: '',
       password: '',
-      rePassword:'',
-      Phone:'',
+      rePassword: '',
+      Phone: '',
     },
-    onSubmit:registerSubmit
+    onSubmit: registerSubmit
     // validate: values => {
     //   const errors = {};
     //   if (!values.email) {
@@ -39,8 +42,7 @@ function Register  () {
       <div className={style.heading}>Sign In</div>
       <form onSubmit={formik.handleSubmit} className={style.form}>
 
-
-      <input
+        <input
           className={style.input}
           type="name"
           name="name"
@@ -64,7 +66,7 @@ function Register  () {
           <div style={{ color: 'red' }}>{formik.errors.email}</div>
         ) : null}
 
-
+   
         <input
           className={style.input}
           type="password"
@@ -77,6 +79,33 @@ function Register  () {
         {formik.touched.password && formik.errors.password ? (
           <div style={{ color: 'red' }}>{formik.errors.password}</div>
         ) : null}
+
+        <input
+          className={style.input}
+          type="rePassword"
+          name="rePassword"
+          placeholder="enter your password again"
+          value={formik.values.rePassword
+
+          }
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}  // Track input blur
+        />
+
+
+     
+
+        <input
+          className={style.input}
+          type="Phone"
+          name="Phone"
+          placeholder="enter your Phone"
+          value={formik.values.Phone}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}  // Track input blur
+        />
+
+
 
         <span className={style['forgot-password']}>
           <a href="#">Forgot Password?</a>
